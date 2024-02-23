@@ -1,95 +1,46 @@
+'use client';
 import Image from "next/image";
 import styles from "./page.module.css";
+import GoogleSigninButton from "./components/GoogleSigninButton";
+import EmailSignin from "./components/EmailSignin"
+import { signIn, signOut, useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
 
 export default function Home() {
+  const { data: session } = useSession();
+
+  if (session && session.user){
+    return redirect("/personal")
+  }
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className={styles.wrapper}>
+      <div className={styles.image}>
+      </div>
+      <div className={styles.container}>
+        <text className={styles.title} style={{ position: 'relative',top: '24px', left: '16px' }}>登入會員</text>
+        <GoogleSigninButton />
+        <div className={styles.split} style={{ position: 'relative',top: '89px', left: '16px' }}>
+          <img src="Line.svg" className={styles.line} style={{ marginRight: '57px' }}></img>
+          <text className={styles.or}>或</text>
+          <img src="Line.svg" className={styles.line} style={{ marginLeft: '57px' }}></img>
+        </div>
+        <EmailSignin />
+        <div className={styles.keep_login} style={{ position: 'relative',top: '82px'}}>
+          <img src="Mask.svg" ></img>
+          <text className={styles.keep_login_text} >保持登入</text>
+        </div>
+        <div className={styles.account_check}>
+          <text className={styles.no_account} >還沒有帳號嗎？</text>
+          <text className={styles.register_now} >馬上註冊</text>
+        </div>
+        <div style={{ position: 'relative',top: '152px', left: '16px' , width: '353px'}}>
+          <text className={styles.sevice_regulation} >登入即同意 AsiaYo</text>
+          <text className={styles.service_regulation_blue}> 服務條款</text>
+          <text className={styles.sevice_regulation}>與</text>
+          <text className={styles.service_regulation_blue}> 隱私權政策</text>
         </div>
       </div>
+    </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
   );
 }
