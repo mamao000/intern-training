@@ -1,5 +1,7 @@
 /* LoginPage.module.css */
 
+
+
 .container {
   width: 385px;
   height: 670px;
@@ -8,14 +10,6 @@
   background: #FFF;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.16);
 }
-
-/* @media screen and (max-width: 10px) {
-  .container {
-    width: 100%;
-    box-sizing: border-box;
-    margin: 0; 
-  }
-} */
 
 .title {
   width: 98px;
@@ -40,7 +34,8 @@
   align-items: flex-start; /* Center items vertically */
   justify-content: space-between; /* Add space between the image and container */
   margin: auto;
-  padding: 188px;
+  padding-top: 102px;
+  padding-bottom: 188px;
   gap: 155px;
 }
 
@@ -51,26 +46,20 @@
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+  position: relative;
+  top: 89px; 
+  padding: 0px 16px;
 }
 
-.line {
-  width: 112px;
-  height: 2px;
-  flex-shrink: 0;
-  stroke-width: 1px;
-  stroke: #BFBFBF;
+.split::before, .split::after {
+    content: "";
+    flex: 1 1 0%;
+    height: 1px;
+    background-color: rgb(191, 191, 191);
 }
 
 .or {
-  width: 16px;
-  flex-shrink: 0;
-  color: var(--neutral-078-c-8-c-8-c, #8C8C8C);
-  text-align: center;
-  font-family: "Noto Sans TC";
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px; /* 112.5% */
+  margin: 0px 24px;
 }
 
 .keep_login {
@@ -81,6 +70,8 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
+  position: relative;
+  top: 82px;
 }
 
 .keep_login_text {
@@ -93,15 +84,6 @@
   line-height: 24px; /* 171.429% */
 }
 
-.no_account {
-  color: #595959;
-  font-family: "PingFang TC";
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px; /* 142.857% */
-}
-
 .register_now {
   width: 69px;
   color: #1EA1D6;
@@ -112,7 +94,11 @@
   line-height: normal;
 }
 
-.service_regulation {
+.service {
+  position: relative;
+  top: 152px;
+  left: 16px;
+  width: 353px;
   color: var(--neutral-078-c-8-c-8-c, #8C8C8C);
   font-family: "Noto Sans TC";
   font-size: 12px;
@@ -136,4 +122,42 @@
   left: 16px;
   display: flex;
   align-items: center;
+  color: #595959;
+  font-family: "PingFang TC";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
 }
+
+@media screen and (max-width: 1274px) {
+  .wrapper {
+    padding-top: 16px;
+  }
+
+  .image {
+    display: none; 
+  }
+
+  .split {
+    width: 95%;
+  }
+
+  .container{
+    width: 100%;
+    margin: auto;
+    box-shadow: none;
+  }
+
+  .keep_login {
+    justify-content: flex-start;
+  }
+
+  .account_check {
+    left: 0px;
+  }
+  
+  .service {
+    left: 0px;
+  }
+} 

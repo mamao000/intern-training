@@ -8,7 +8,13 @@
     font-weight: 400;
     line-height: 20px; /* 142.857% */
   }
-  
+
+.form {
+  position: relative;
+  top: 114px;
+  left: 16px;
+}
+
 .form_input {
   width: 353px;
   height: 48px;
@@ -53,6 +59,14 @@
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+  color: #FFF;
+  text-align: center;
+  font-family: "Noto Sans TC";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  border: none;
 }
 
 .split {
@@ -68,6 +82,40 @@
   width: 353px;
   height: 48px;
   flex-shrink: 0;
-  background: url("/web_light_sq_SI@2x.png") center center no-repeat;
   background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 40px;
+  left: 16px;
+  border: none;
 }
+
+@media screen and (max-width: 1274px) {
+  .signin_button {
+    width: 100%;
+    position: relative;
+    left: 0; 
+  }
+
+  .form_input {
+    width: 99%;
+    position: relative;
+    left: 0; 
+    margin: auto;
+  }
+
+  .form_group {
+    width: 100%;
+  }
+
+  .form {
+    left: 0px;
+  }
+
+  .submit {
+    width: 100%;
+  }
+} 
+

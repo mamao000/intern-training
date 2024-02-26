@@ -7,8 +7,9 @@ const GoogleSigninButton = () => {
     <button
       onClick={() => signIn()}
       className={styles.signin_button}
-      style={{ position: 'relative',top: '40px', left: '16px' }}
     >
+    <img src="icons8-google.svg"></img>
+    使用google登入
     </button>
   );
 };

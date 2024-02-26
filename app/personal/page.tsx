@@ -2,16 +2,15 @@
 import { authConfig, loginIsRequiredServer } from "@/app/lib/auth";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
-import { useRouter } from "next/router"; 
+import { useRouter } from "next/navigation"; 
 
 export default function Page() {
     //   await loginIsRequiredServer();
     const { data: session } = useSession();
+    const router = useRouter();
 
     const handleSignOut = async () => {
-        await signOut();
-        return redirect("/")
+        await signOut({ callbackUrl: '/' }); 
     };
 
     return (

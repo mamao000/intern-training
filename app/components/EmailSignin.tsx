@@ -22,7 +22,7 @@ export default function CredentialsForm() {
     };
 
     return (
-    <form onSubmit={handleSubmit} style={{ position: 'relative',top: '114px', left: '16px' }}>
+    <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.form_group} >
             <label className={styles.form_label} >電子郵件</label>
             <input type="text" value={userInfo.email} onChange={({target}) => {setUserInfo({...userInfo, email: target.value})}} className={styles.form_input} required />
@@ -32,7 +32,7 @@ export default function CredentialsForm() {
             <label className={styles.form_label}>密碼</label>
             <input type="password" value={userInfo.password} onChange={({target}) => {setUserInfo({...userInfo, password: target.value})}} className={styles.form_input} required />
         </div>
-            <text className={styles.forgot_password} style={{ position: 'relative',top: '16px'}}>忘記密碼</text>
+            <span className={styles.forgot_password} style={{ position: 'relative',top: '16px'}}>忘記密碼</span>
         <div >
             <button className={styles.submit} type="submit" style={{ position: 'relative',top: '71px'}}>登入</button>
         </div>

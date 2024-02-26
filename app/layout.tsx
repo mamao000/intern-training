@@ -20,7 +20,11 @@ export default function RootLayout({
     <html lang="en">
       <body style={{margin : "0px"}}>
         <div className="navbar">
+          <div className="navbar_block">
+            <img src="bars.svg"></img>
+          </div>
           <img src="Group-22.svg" className="brand" ></img>
+          <div className="navbar_block"></div>
           <div className="navbar_list">
             <button className="navbar_button" style={{ width: "141px", height: "64px"}}>繁體中文(台灣)</button>
             <button className="navbar_button" style={{ width: "88px", height: "64px"}}>常見問題</button>
