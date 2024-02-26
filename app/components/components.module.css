@@ -98,7 +98,9 @@
     position: relative;
     left: 0; 
   }
-
+  .form_label {
+    width: 100%;
+  }
   .form_input {
     width: 99%;
     position: relative;

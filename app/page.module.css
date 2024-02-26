@@ -150,7 +150,12 @@
   }
 
   .keep_login {
+    width: 100%;
     justify-content: flex-start;
+  }
+
+  .keep_login_text {
+    width: 100%;
   }
 
   .account_check {
@@ -159,5 +164,6 @@
   
   .service {
     left: 0px;
+    width: 100%;
   }
 } 

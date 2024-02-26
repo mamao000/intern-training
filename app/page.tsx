@@ -25,7 +25,7 @@ export default function Home() {
         <EmailSignin />
         <div className={styles.keep_login} >
           <img src="Mask.svg" ></img>
-          <text className={styles.keep_login_text} >保持登入</text>
+          <span className={styles.keep_login_text} >保持登入</span>
         </div>
         <div className={styles.account_check}>
           還沒有帳號嗎？
