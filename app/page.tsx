@@ -1,44 +1,58 @@
-'use client';
+"use client";
 import Image from "next/image";
 import styles from "./page.module.css";
-import GoogleSigninButton from "./components/GoogleSigninButton";
-import EmailSignin from "./components/EmailSignin"
+import GoogleSigninButton from "./components/GoogleSignInButton";
+import EmailSignin from "./components/EmailSignIn";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
+
+import {
+  Wrapper,
+  ImageBlock,
+  Container,
+  Title,
+  Split,
+  KeepLogin,
+  KeepLoginText,
+  AccountCheck,
+  RegisterNow,
+  Service,
+  ServiceRegulationBlue,
+  Or,
+} from "./styled";
 
 export default function Home() {
   const { data: session } = useSession();
 
-  if (session && session.user){
-    return redirect("/personal")
+  if (session && session.user) {
+    return redirect("/personal");
   }
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.image}>
-      </div>
-      <div className={styles.container}>
-        <div className={styles.title} style={{ position: 'relative',top: '24px', left: '16px' }}>登入會員</div>
+    <Wrapper>
+      <ImageBlock />
+      <Container>
+        <Title style={{ position: "relative", top: "24px", left: "16px" }}>
+          登入會員
+        </Title>
         <GoogleSigninButton />
-        <div className={styles.split} >          
-          <span className={styles.or}>或</span>
-        </div>
+        <Split>
+          <Or>或</Or>
+        </Split>
         <EmailSignin />
-        <div className={styles.keep_login} >
-          <img src="Mask.svg" ></img>
-          <span className={styles.keep_login_text} >保持登入</span>
-        </div>
-        <div className={styles.account_check}>
+        <KeepLogin>
+          <img src="Mask.svg"></img>
+          <KeepLoginText>保持登入</KeepLoginText>
+        </KeepLogin>
+        <AccountCheck>
           還沒有帳號嗎？
-          <span className={styles.register_now} >馬上註冊</span>
-        </div>
-        <div className={styles.service}>
+          <RegisterNow>馬上註冊</RegisterNow>
+        </AccountCheck>
+        <Service>
           登入即同意 AsiaYo
-          <span className={styles.service_regulation_blue}> 服務條款</span>
-          與
-          <span className={styles.service_regulation_blue}> 隱私權政策</span>
-        </div>
-      </div>
-    </div>
-
+          <ServiceRegulationBlue>服務條款</ServiceRegulationBlue>與
+          <ServiceRegulationBlue>隱私政策</ServiceRegulationBlue>
+        </Service>
+      </Container>
+    </Wrapper>
   );
 }

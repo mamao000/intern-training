@@ -1,10 +1,19 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import {
+  Navbar,
+  NavbarButton,
+  NavbarBlock,
+  NavbarBox,
+  NavbarList,
+  Brand,
+} from "./styled";
+import GlobalStyle from "./globalStyles";
 
 const inter = Inter({ subsets: ["latin"] });
 import Providers from "./components/Providers";
-import GoogleSigninButton from "./components/GoogleSigninButton";
+import StyledComponentsRegistry from "./lib/registry";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,22 +27,31 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body style={{margin : "0px"}}>
-        <div className="navbar">
-          <div className="navbar_block">
-            <img src="bars.svg"></img>
-          </div>
-          <img src="Group-22.svg" className="brand" ></img>
-          <div className="navbar_block"></div>
-          <div className="navbar_list">
-            <button className="navbar_button" style={{ width: "141px", height: "64px"}}>繁體中文(台灣)</button>
-            <button className="navbar_button" style={{ width: "88px", height: "64px"}}>常見問題</button>
-            <button className="navbar_button" style={{ width: "88px", height: "64px"}}>聯繫我們</button>
-          </div>
-        </div>
-        <Providers>
-            {children}
-        </Providers>
+      <GlobalStyle />
+      <body style={{ margin: "0px" }}>
+        <StyledComponentsRegistry>
+          <Navbar>
+            <NavbarBlock>
+              <img src="bars.svg"></img>
+            </NavbarBlock>
+            <Brand>
+              <img src="Group-22.svg"></img>
+            </Brand>
+            <NavbarBlock></NavbarBlock>
+            <NavbarList>
+              <NavbarButton style={{ width: "141px", height: "64px" }}>
+                繁體中文(台灣)
+              </NavbarButton>
+              <NavbarButton style={{ width: "88px", height: "64px" }}>
+                常見問題
+              </NavbarButton>
+              <NavbarButton style={{ width: "88px", height: "64px" }}>
+                聯繫我們
+              </NavbarButton>
+            </NavbarList>
+          </Navbar>
+          <Providers>{children}</Providers>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
