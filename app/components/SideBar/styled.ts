@@ -5,9 +5,12 @@ export const ProfileImage = styled.div`
   height: 88px;
   background-color: #ffffff;
   border-bottom: 1px solid #f5f5f5;
+<<<<<<< HEAD
   display: flex;
   justify-content: center;
   align-items: center;
+=======
+>>>>>>> 5e91dc5 (feature:account_profile)
 `;
 
 export const Button = styled.button`

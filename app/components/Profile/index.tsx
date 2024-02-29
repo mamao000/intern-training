@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+<<<<<<< HEAD
 import { useEffect } from "react";
+=======
+>>>>>>> 5e91dc5 (feature:account_profile)
 import {
   ProfileContainer,
   UserProfile,
@@ -22,6 +25,7 @@ const Profile = () => {
     phone: "",
     email: "",
   });
+<<<<<<< HEAD
 
   const [isValid, setIsValid] = useState(false);
 
@@ -69,6 +73,11 @@ const Profile = () => {
   return (
     <ProfileContainer>
       <UserProfile onSubmit={handleSubmit}>
+=======
+  return (
+    <ProfileContainer>
+      <UserProfile>
+>>>>>>> 5e91dc5 (feature:account_profile)
         <Title>個人資訊</Title>
         <FormNameContainer>
           <FormGroup>
@@ -79,7 +88,10 @@ const Profile = () => {
               value={userProfile.first_name}
               onChange={({ target }) => {
                 setUserProfile({ ...userProfile, first_name: target.value });
+<<<<<<< HEAD
                 validateForm();
+=======
+>>>>>>> 5e91dc5 (feature:account_profile)
               }}
               required
             />
@@ -92,7 +104,10 @@ const Profile = () => {
               value={userProfile.last_name}
               onChange={({ target }) => {
                 setUserProfile({ ...userProfile, last_name: target.value });
+<<<<<<< HEAD
                 validateForm();
+=======
+>>>>>>> 5e91dc5 (feature:account_profile)
               }}
               required
             />
@@ -118,18 +133,29 @@ const Profile = () => {
         <FormGroup>
           <FormLabel>電子郵件</FormLabel>
           <EmailInput
+<<<<<<< HEAD
+=======
+            placeholder="testjp@gmail.com"
+>>>>>>> 5e91dc5 (feature:account_profile)
             type="text"
             value={userProfile.email}
             onChange={({ target }) => {
               setUserProfile({ ...userProfile, email: target.value });
+<<<<<<< HEAD
               validateForm();
+=======
+>>>>>>> 5e91dc5 (feature:account_profile)
             }}
             required
           />
         </FormGroup>
+<<<<<<< HEAD
         <Submit type="submit" isValid={isValid} disabled={!isValid}>
           儲存
         </Submit>
+=======
+        <Submit type="submit">儲存</Submit>
+>>>>>>> 5e91dc5 (feature:account_profile)
       </UserProfile>
     </ProfileContainer>
   );

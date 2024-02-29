@@ -78,6 +78,7 @@ export const FormInput = styled.input`
     /* Placeholder color */
     color: var(--neutral-06-bfbfbf, #bfbfbf);
   }
+<<<<<<< HEAD
 
   &:focus {
     border: 2px solid var(--primary-061-e-9-fd-2, #1e9fd2);
@@ -86,6 +87,11 @@ export const FormInput = styled.input`
 `;
 
 export const Submit = styled.button<{ isValid: boolean }>`
+=======
+`;
+
+export const Submit = styled.button`
+>>>>>>> 5e91dc5 (feature:account_profile)
   width: 100%;
   display: flex;
   padding: 12px 24px;
@@ -94,6 +100,7 @@ export const Submit = styled.button<{ isValid: boolean }>`
   gap: 4px;
   flex: 1 0 0;
   border-radius: 4px;
+<<<<<<< HEAD
   opacity: ${({ isValid }) => (isValid ? 1 : 0.48)};
   background: ${({ isValid }) =>
     isValid
@@ -102,6 +109,11 @@ export const Submit = styled.button<{ isValid: boolean }>`
   border: none;
   cursor: ${({ isValid }) => (isValid ? "pointer" : "not-allowed")};
   color: #fff;
+=======
+  opacity: 0.48;
+  background: var(--primary-061-e-9-fd-2, #1e9fd2);
+  border: none;
+>>>>>>> 5e91dc5 (feature:account_profile)
 `;
 
 export const EmailInput = styled(FormInput)`
@@ -114,10 +126,13 @@ export const FormSelect = styled.select`
   width: auto;
   height: 40px;
   border: none;
+<<<<<<< HEAD
 
   &:focus {
     outline: none;
   }
+=======
+>>>>>>> 5e91dc5 (feature:account_profile)
 `;
 
 export const FormPhone = styled.div`
@@ -127,16 +142,22 @@ export const FormPhone = styled.div`
   border-radius: 4px;
   border: 1px solid var(--neutral-06-bfbfbf, #bfbfbf);
   background: var(--neutral-01-ffffff, #fff);
+<<<<<<< HEAD
 
   &:focus-within {
     border: 2px solid var(--primary-061-e-9-fd-2, #1e9fd2);
   }
+=======
+>>>>>>> 5e91dc5 (feature:account_profile)
 `;
 
 export const FormPhoneInput = styled(FormInput)`
   border: none;
+<<<<<<< HEAD
 
   &:focus {
     border: none;
   }
+=======
+>>>>>>> 5e91dc5 (feature:account_profile)
 `;
