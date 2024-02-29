@@ -25,7 +25,7 @@ export default function Home() {
   const { data: session } = useSession();
 
   if (session && session.user) {
-    return redirect("/personal");
+    return redirect("/account_profile");
   }
   return (
     <Wrapper>
