@@ -80,7 +80,7 @@ export const FormInput = styled.input`
   }
 `;
 
-export const Submit = styled.button`
+export const Submit = styled.button<{ isValid: boolean }>`
   width: 100%;
   display: flex;
   padding: 12px 24px;
@@ -90,7 +90,10 @@ export const Submit = styled.button`
   flex: 1 0 0;
   border-radius: 4px;
   opacity: 0.48;
-  background: var(--primary-061-e-9-fd-2, #1e9fd2);
+  background: ${({ isValid }) =>
+    isValid
+      ? "var(--primary-061-e-9-fd-2, #1e9fd2)"
+      : "var(--primary-061-e-9-fd-2, #1E9FD2)"};
   border: none;
 `;
 
@@ -104,6 +107,11 @@ export const FormSelect = styled.select`
   width: auto;
   height: 40px;
   border: none;
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
 `;
 
 export const FormPhone = styled.div`
@@ -113,8 +121,20 @@ export const FormPhone = styled.div`
   border-radius: 4px;
   border: 1px solid var(--neutral-06-bfbfbf, #bfbfbf);
   background: var(--neutral-01-ffffff, #fff);
+
+  &:focus {
+    fill: #fff;
+    stroke-width: 1px;
+    stroke: var(--primary-061-e-9-fd-2, #1e9fd2);
+    filter: drop-shadow(0px 0px 0px rgba(30, 159, 210, 0.48));
+  }
 `;
 
 export const FormPhoneInput = styled(FormInput)`
   border: none;
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
 `;

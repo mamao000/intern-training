@@ -21,9 +21,41 @@ const Profile = () => {
     phone: "",
     email: "",
   });
+
+  const [isValid, setIsValid] = useState(false);
+
+  const validateForm = () => {
+    setIsValid(
+      userProfile.first_name !== "" &&
+        userProfile.last_name !== "" &&
+        userProfile.phone !== "" &&
+        userProfile.email !== "" &&
+        isValidEmail(userProfile.email) &&
+        isValidPhone(userProfile.phone)
+    );
+    console.log(isValid);
+  };
+
+  const isValidEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const isValidPhone = (phone: string) => {
+    const phoneRegex = /^09\d{8}$/;
+    return phoneRegex.test(phone);
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // setUserProfile(
+    //   email:
+    // )
+  };
   return (
     <ProfileContainer>
-      <UserProfile>
+      <UserProfile onSubmit={handleSubmit}>
         <Title>個人資訊</Title>
         <FormNameContainer>
           <FormGroup>
@@ -34,6 +66,7 @@ const Profile = () => {
               value={userProfile.first_name}
               onChange={({ target }) => {
                 setUserProfile({ ...userProfile, first_name: target.value });
+                validateForm();
               }}
               required
             />
@@ -46,6 +79,7 @@ const Profile = () => {
               value={userProfile.last_name}
               onChange={({ target }) => {
                 setUserProfile({ ...userProfile, last_name: target.value });
+                validateForm();
               }}
               required
             />
@@ -63,6 +97,7 @@ const Profile = () => {
               value={userProfile.phone}
               onChange={({ target }) => {
                 setUserProfile({ ...userProfile, phone: target.value });
+                validateForm();
               }}
               required
             />
@@ -76,11 +111,14 @@ const Profile = () => {
             value={userProfile.email}
             onChange={({ target }) => {
               setUserProfile({ ...userProfile, email: target.value });
+              validateForm();
             }}
             required
           />
         </FormGroup>
-        <Submit type="submit">儲存</Submit>
+        <Submit type="submit" disabled={isValid} isValid={isValid}>
+          儲存
+        </Submit>
       </UserProfile>
     </ProfileContainer>
   );

@@ -16,7 +16,7 @@ export default function Account_Profile() {
   return (
     <Background>
       <Wrapper>
-        <SideBar />
+        <SideBar username={session?.user?.name ?? "Guest"} />
         <Profile />
       </Wrapper>
     </Background>

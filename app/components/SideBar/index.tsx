@@ -4,7 +4,11 @@ import React from "react";
 import { ProfileImage, Button, SideBarContainer } from "./styled";
 import { useRouter } from "next/navigation";
 
-const SideBar = () => {
+interface Prop {
+  username: string;
+}
+
+const SideBar = ({ username }: Prop) => {
   const { data: session } = useSession();
   const router = useRouter();
 
@@ -14,7 +18,7 @@ const SideBar = () => {
 
   return (
     <SideBarContainer>
-      <ProfileImage>名字</ProfileImage>
+      <ProfileImage>{username}</ProfileImage>
       <Button>我的訂單</Button>
       <Button>個人資料</Button>
       <Button>收藏清單</Button>
