@@ -12,8 +12,6 @@ import {
   Container,
   Title,
   Split,
-  KeepLogin,
-  KeepLoginText,
   AccountCheck,
   RegisterNow,
   Service,
@@ -31,18 +29,12 @@ export default function Home() {
     <Wrapper>
       <ImageBlock />
       <Container>
-        <Title style={{ position: "relative", top: "24px", left: "16px" }}>
-          登入會員
-        </Title>
+        <Title>登入會員</Title>
         <GoogleSigninButton />
         <Split>
           <Or>或</Or>
         </Split>
         <EmailSignin />
-        <KeepLogin>
-          <img src="Mask.svg"></img>
-          <KeepLoginText>保持登入</KeepLoginText>
-        </KeepLogin>
         <AccountCheck>
           還沒有帳號嗎？
           <RegisterNow>馬上註冊</RegisterNow>

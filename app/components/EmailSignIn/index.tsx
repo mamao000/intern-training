@@ -12,6 +12,8 @@ import {
   Reminder,
   ForgotPassword,
   Submit,
+  KeepLogin,
+  KeepLoginText,
 } from "./styled";
 
 interface CredentialsFormProps {
@@ -56,9 +58,11 @@ export default function CredentialsForm() {
         />
       </FormGroup>
       <ForgotPassword>忘記密碼</ForgotPassword>
-      <Submit type="submit" style={{ position: "relative", top: "71px" }}>
-        登入
-      </Submit>
+      <KeepLogin>
+        <img src="Mask.svg"></img>
+        <KeepLoginText>保持登入</KeepLoginText>
+      </KeepLogin>
+      <Submit type="submit">登入</Submit>
     </Form>
   );
 }
