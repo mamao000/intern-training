@@ -1,8 +1,9 @@
 "use client";
 import styled from "styled-components";
+import { BREAKPOINT } from "./constants";
 
 export const Navbar = styled.div`
-  height: 64px;
+  max-height: 64px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -34,8 +35,8 @@ export const NavbarButton = styled.button`
 `;
 
 export const NavbarBox = styled.div`
-  width: 141px;
-  height: 64px;
+  max-width: 141px;
+  max-height: 64px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -44,21 +45,20 @@ export const NavbarBox = styled.div`
 
 export const Brand = styled.div`
   display: flex;
-  width: 120px;
-  height: 29px;
+  max-width: 120px;
+  max-height: 29px;
   padding: 0.054px 0px 0.127px 0px;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  position: relative;
-  left: 16px;
+  margin-left: 20px;
 `;
 
 export const NavbarList = styled.div`
   display: flex;
   align-items: center;
 
-  @media screen and (max-width: 770px) {
+  @media ${BREAKPOINT.NAVBAR} {
     display: none;
   }
 `;
@@ -66,10 +66,10 @@ export const NavbarList = styled.div`
 export const NavbarBlock = styled.div`
   display: none;
 
-  @media screen and (max-width: 770px) {
+  @media ${BREAKPOINT.NAVBAR} {
     display: inline;
-    width: 48px;
-    height: 48px;
+    max-width: 48px;
+    max-height: 48px;
     padding: 12px;
     box-sizing: border-box;
     cursor: pointer;
@@ -77,14 +77,14 @@ export const NavbarBlock = styled.div`
 `;
 
 export const Container = styled.div`
-  width: 385px;
+  min-width: 385px;
   height: 670px;
   flex-shrink: 0;
   border-radius: 4px;
   background: #fff;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.16);
 
-  @media screen and (max-width: 1274px) {
+  @media ${BREAKPOINT.CONTAIN} {
     width: 100%;
     margin: auto;
     box-shadow: none;
@@ -92,23 +92,29 @@ export const Container = styled.div`
   }
 `;
 export const Title = styled.div`
-  width: 98px;
+  max-width: 98px;
   color: #262626;
   font-family: "Noto Sans TC";
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 28px;
+  padding-top: 24px;
+  padding-left: 16px;
+
+  @media ${BREAKPOINT.CONTAIN} {
+    padding-left: 0px;
+  }
 `;
 
 export const ImageBlock = styled.div`
-  width: 500px;
-  height: 507px;
+  min-width: 500px;
+  min-height: 507px;
   flex-shrink: 0;
   background: url("/onboarding_select_01.png"),
     #ffffff 0px 0px / 100% 100% no-repeat;
 
-  @media screen and (max-width: 1274px) {
+  @media ${BREAKPOINT.CONTAIN} {
     display: none;
   }
 `;
@@ -123,21 +129,19 @@ export const Wrapper = styled.div`
   padding-bottom: 188px;
   gap: 155px;
 
-  @media screen and (max-width: 1274px) {
+  @media ${BREAKPOINT.CONTAIN} {
     padding-top: 16px;
   }
 `;
 
 export const Split = styled.div`
   display: flex;
-  width: 353px;
-  height: 18px;
+  min-width: 353px;
+  min-height: 18px;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  position: relative;
-  left: 16px;
-  top: 89px;
+  margin: 16px;
 
   &::before,
   &::after {
@@ -147,9 +151,9 @@ export const Split = styled.div`
     background-color: rgb(191, 191, 191);
   }
 
-  @media screen and (max-width: 1274px) {
+  @media ${BREAKPOINT.CONTAIN} {
     width: 100%;
-    left: 0px;
+    margin: 16px 0px;
   }
 `;
 
@@ -157,39 +161,8 @@ export const Or = styled.div`
   margin: 0px 24px;
 `;
 
-export const KeepLogin = styled.div`
-  width: 320px;
-  height: 56px;
-  flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  position: relative;
-  top: 82px;
-
-  @media screen and (max-width: 1274px) {
-    width: 100%;
-    justify-content: flex-start;
-  }
-`;
-
-export const KeepLoginText = styled.span`
-  width: 256px;
-  color: #595959;
-  font-family: "PingFang TC";
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px; /* 171.429% */
-
-  @media screen and (max-width: 1274px) {
-    width: 100%;
-  }
-`;
-
 export const RegisterNow = styled.span`
-  width: 69px;
+  max-width: 69px;
   color: #1ea1d6;
   font-family: "Noto Sans TC";
   font-size: 14px;
@@ -199,10 +172,8 @@ export const RegisterNow = styled.span`
 `;
 
 export const Service = styled.div`
-  position: relative;
-  top: 152px;
-  left: 16px;
-  width: 353px;
+  margin: 16px;
+  max-width: 353px;
   color: var(--neutral-078-c-8-c-8-c, #8c8c8c);
   font-family: "Noto Sans TC";
   font-size: 12px;
@@ -210,8 +181,8 @@ export const Service = styled.div`
   font-weight: 400;
   line-height: 16px; /* 133.333% */
 
-  @media screen and (max-width: 1274px) {
-    left: 0px;
+  @media ${BREAKPOINT.CONTAIN} {
+    margin: 16px 0px;
     width: 100%;
   }
 `;
@@ -226,9 +197,7 @@ export const ServiceRegulationBlue = styled.span`
 `;
 
 export const AccountCheck = styled.div`
-  position: relative;
-  top: 135px;
-  left: 16px;
+  margin: 16px;
   display: flex;
   align-items: center;
   color: #595959;
@@ -238,7 +207,7 @@ export const AccountCheck = styled.div`
   font-weight: 400;
   line-height: 20px; /* 142.857% */
 
-  @media screen and (max-width: 1274px) {
-    left: 0px;
+  @media ${BREAKPOINT.CONTAIN} {
+    margin: 16px 0px;
   }
 `;
