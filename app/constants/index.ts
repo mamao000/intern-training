@@ -1,4 +1,4 @@
 export const BREAKPOINT = {
-  CONTAIN: "screen and (max-width: 1274px)",
-  NAVBAR: "screen and (max-width: 770px)",
+  TABLET: "screen and (max-width: 1274px)",
+  MOBILE: "screen and (max-width: 770px)",
 };

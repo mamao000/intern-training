@@ -58,7 +58,7 @@ export const NavbarList = styled.div`
   display: flex;
   align-items: center;
 
-  @media ${BREAKPOINT.NAVBAR} {
+  @media ${BREAKPOINT.MOBILE} {
     display: none;
   }
 `;
@@ -66,7 +66,7 @@ export const NavbarList = styled.div`
 export const NavbarBlock = styled.div`
   display: none;
 
-  @media ${BREAKPOINT.NAVBAR} {
+  @media ${BREAKPOINT.MOBILE} {
     display: inline;
     max-width: 48px;
     max-height: 48px;
@@ -84,7 +84,7 @@ export const Container = styled.div`
   background: #fff;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.16);
 
-  @media ${BREAKPOINT.CONTAIN} {
+  @media ${BREAKPOINT.TABLET} {
     width: 100%;
     margin: auto;
     box-shadow: none;
@@ -102,7 +102,7 @@ export const Title = styled.div`
   padding-top: 24px;
   padding-left: 16px;
 
-  @media ${BREAKPOINT.CONTAIN} {
+  @media ${BREAKPOINT.TABLET} {
     padding-left: 0px;
   }
 `;
@@ -114,7 +114,7 @@ export const ImageBlock = styled.div`
   background: url("/onboarding_select_01.png"),
     #ffffff 0px 0px / 100% 100% no-repeat;
 
-  @media ${BREAKPOINT.CONTAIN} {
+  @media ${BREAKPOINT.TABLET} {
     display: none;
   }
 `;
@@ -129,7 +129,7 @@ export const Wrapper = styled.div`
   padding-bottom: 188px;
   gap: 155px;
 
-  @media ${BREAKPOINT.CONTAIN} {
+  @media ${BREAKPOINT.TABLET} {
     padding-top: 16px;
   }
 `;
@@ -151,7 +151,7 @@ export const Split = styled.div`
     background-color: rgb(191, 191, 191);
   }
 
-  @media ${BREAKPOINT.CONTAIN} {
+  @media ${BREAKPOINT.TABLET} {
     width: 100%;
     margin: 16px 0px;
   }
@@ -181,7 +181,7 @@ export const Service = styled.div`
   font-weight: 400;
   line-height: 16px; /* 133.333% */
 
-  @media ${BREAKPOINT.CONTAIN} {
+  @media ${BREAKPOINT.TABLET} {
     margin: 16px 0px;
     width: 100%;
   }
@@ -207,7 +207,7 @@ export const AccountCheck = styled.div`
   font-weight: 400;
   line-height: 20px; /* 142.857% */
 
-  @media ${BREAKPOINT.CONTAIN} {
+  @media ${BREAKPOINT.TABLET} {
     margin: 16px 0px;
   }
 `;

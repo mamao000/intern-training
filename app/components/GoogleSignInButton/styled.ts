@@ -13,7 +13,7 @@ export const SignInButton = styled.button`
   margin: 16px;
   border: none;
 
-  @media ${BREAKPOINT.CONTAIN} {
+  @media ${BREAKPOINT.TABLET} {
     max-width: 1274px;
     margin: 16px 0px;
   }
