@@ -11,7 +11,7 @@ export const FormLabel = styled.label`
   font-weight: 400;
   line-height: 20px; /* 142.857% */
 
-  @media ${BREAKPOINT.CONTAIN} {
+  @media ${BREAKPOINT.TABLET} {
     width: 100%;
   }
 `;
@@ -19,7 +19,7 @@ export const FormLabel = styled.label`
 export const Form = styled.form`
   margin: 16px;
 
-  @media ${BREAKPOINT.CONTAIN} {
+  @media ${BREAKPOINT.TABLET} {
     margin: 16px 0px;
   }
 `;
@@ -29,7 +29,7 @@ export const FormInput = styled.input`
   height: 48px;
   flex-shrink: 0;
 
-  @media ${BREAKPOINT.CONTAIN} {
+  @media ${BREAKPOINT.TABLET} {
     width: 100%;
   }
 `;
@@ -44,7 +44,7 @@ export const FormGroup = styled.div`
   gap: 4px;
   flex-shrink: 0;
 
-  @media ${BREAKPOINT.CONTAIN} {
+  @media ${BREAKPOINT.TABLET} {
     width: 100%;
   }
 `;
@@ -88,7 +88,7 @@ export const Submit = styled.button`
   border: none;
   margin-top: 6px;
 
-  @media ${BREAKPOINT.CONTAIN} {
+  @media ${BREAKPOINT.TABLET} {
     width: 100%;
   }
 `;
@@ -102,7 +102,7 @@ export const KeepLogin = styled.div`
   align-items: center;
   gap: 8px;
 
-  @media ${BREAKPOINT.CONTAIN} {
+  @media ${BREAKPOINT.TABLET} {
     width: 100%;
     justify-content: flex-start;
   }
@@ -117,7 +117,7 @@ export const KeepLoginText = styled.span`
   font-weight: 400;
   line-height: 24px; /* 171.429% */
 
-  @media ${BREAKPOINT.CONTAIN} {
+  @media ${BREAKPOINT.TABLET} {
     width: 100%;
   }
 `;
