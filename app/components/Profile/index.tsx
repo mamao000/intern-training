@@ -63,7 +63,6 @@ const Profile = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Save data to local storage
     localStorage.setItem("userProfile", JSON.stringify(userProfile));
   };
 

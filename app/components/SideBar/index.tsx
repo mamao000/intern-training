@@ -2,7 +2,6 @@
 import { signIn, signOut, useSession } from "next-auth/react";
 import React from "react";
 import { ProfileImage, Button, SideBarContainer } from "./styled";
-import { useRouter } from "next/navigation";
 
 interface Prop {
   username: string;
