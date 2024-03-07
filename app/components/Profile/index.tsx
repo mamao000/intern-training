@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import {
   ProfileContainer,
   UserProfile,
@@ -24,6 +25,20 @@ const Profile = () => {
 
   const [isValid, setIsValid] = useState(false);
 
+  useEffect(() => {
+    const storedUserProfile = JSON.parse(
+      localStorage.getItem("userProfile") || "null"
+    );
+    if (storedUserProfile) {
+      setUserProfile(storedUserProfile);
+      validateForm();
+    }
+  }, []);
+
+  useEffect(() => {
+    validateForm();
+  }, [userProfile]);
+
   const validateForm = () => {
     setIsValid(
       userProfile.first_name !== "" &&
@@ -33,7 +48,6 @@ const Profile = () => {
         isValidEmail(userProfile.email) &&
         isValidPhone(userProfile.phone)
     );
-    console.log(isValid);
   };
 
   const isValidEmail = (email: string) => {
@@ -49,10 +63,10 @@ const Profile = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // setUserProfile(
-    //   email:
-    // )
+    // Save data to local storage
+    localStorage.setItem("userProfile", JSON.stringify(userProfile));
   };
+
   return (
     <ProfileContainer>
       <UserProfile onSubmit={handleSubmit}>
@@ -97,7 +111,6 @@ const Profile = () => {
               value={userProfile.phone}
               onChange={({ target }) => {
                 setUserProfile({ ...userProfile, phone: target.value });
-                validateForm();
               }}
               required
             />
@@ -106,7 +119,6 @@ const Profile = () => {
         <FormGroup>
           <FormLabel>電子郵件</FormLabel>
           <EmailInput
-            placeholder="testjp@gmail.com"
             type="text"
             value={userProfile.email}
             onChange={({ target }) => {
@@ -116,7 +128,7 @@ const Profile = () => {
             required
           />
         </FormGroup>
-        <Submit type="submit" disabled={isValid} isValid={isValid}>
+        <Submit type="submit" isValid={isValid} disabled={!isValid}>
           儲存
         </Submit>
       </UserProfile>

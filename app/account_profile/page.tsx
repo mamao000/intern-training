@@ -1,7 +1,8 @@
 "use client";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { Wrapper, Background } from "./styled";
+import { useEffect } from "react";
 import SideBar from "../components/SideBar";
 import Profile from "../components/Profile";
 
@@ -21,12 +22,4 @@ export default function Account_Profile() {
       </Wrapper>
     </Background>
   );
-  //   return (
-  //     <div className="flex gap-4 ml-auto">
-  //       <p className="text-sky-600">{session?.user?.name}</p>
-  //       <button onClick={() => handleSignOut()} className="text-red-600">
-  //         Sign Out
-  //       </button>
-  //     </div>
-  //   );
 }

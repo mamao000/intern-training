@@ -78,6 +78,11 @@ export const FormInput = styled.input`
     /* Placeholder color */
     color: var(--neutral-06-bfbfbf, #bfbfbf);
   }
+
+  &:focus {
+    border: 2px solid var(--primary-061-e-9-fd-2, #1e9fd2);
+    outline: none;
+  }
 `;
 
 export const Submit = styled.button<{ isValid: boolean }>`
@@ -89,12 +94,14 @@ export const Submit = styled.button<{ isValid: boolean }>`
   gap: 4px;
   flex: 1 0 0;
   border-radius: 4px;
-  opacity: 0.48;
+  opacity: ${({ isValid }) => (isValid ? 1 : 0.48)};
   background: ${({ isValid }) =>
     isValid
       ? "var(--primary-061-e-9-fd-2, #1e9fd2)"
       : "var(--primary-061-e-9-fd-2, #1E9FD2)"};
   border: none;
+  cursor: ${({ isValid }) => (isValid ? "pointer" : "not-allowed")};
+  color: #fff;
 `;
 
 export const EmailInput = styled(FormInput)`
@@ -109,7 +116,6 @@ export const FormSelect = styled.select`
   border: none;
 
   &:focus {
-    border: none;
     outline: none;
   }
 `;
@@ -122,11 +128,8 @@ export const FormPhone = styled.div`
   border: 1px solid var(--neutral-06-bfbfbf, #bfbfbf);
   background: var(--neutral-01-ffffff, #fff);
 
-  &:focus {
-    fill: #fff;
-    stroke-width: 1px;
-    stroke: var(--primary-061-e-9-fd-2, #1e9fd2);
-    filter: drop-shadow(0px 0px 0px rgba(30, 159, 210, 0.48));
+  &:focus-within {
+    border: 2px solid var(--primary-061-e-9-fd-2, #1e9fd2);
   }
 `;
 
@@ -135,6 +138,5 @@ export const FormPhoneInput = styled(FormInput)`
 
   &:focus {
     border: none;
-    outline: none;
   }
 `;

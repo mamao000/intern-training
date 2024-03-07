@@ -9,9 +9,6 @@ interface Prop {
 }
 
 const SideBar = ({ username }: Prop) => {
-  const { data: session } = useSession();
-  const router = useRouter();
-
   const handleSignOut = async () => {
     await signOut({ callbackUrl: "/" });
   };
