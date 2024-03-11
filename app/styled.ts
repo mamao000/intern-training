@@ -10,6 +10,7 @@ export const Navbar = styled.div`
   align-items: center;
   flex-shrink: 0;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.08);
+  margin-bottom: 6px;
 `;
 
 export const NavbarButton = styled.button`
